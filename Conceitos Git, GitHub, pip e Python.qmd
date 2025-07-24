@@ -1,0 +1,85 @@
+---
+title: "Conceitos Git, GitHub, pip e Python"
+author: "Kaline de Almeida Felipe"
+date: "Julho de 2025"
+format:
+  html:
+    theme: default
+    toc: true
+    page-layout: tufte
+    margin-contained: true
+execute:
+  echo: true
+---
+
+# -------------------------
+# Parte 1: Introdução
+
+Este trabalho tem como objetivo apresentar alguns conceitos de programação, como o que são e para que servem o Git e o GitHub, além de seus principais comandos. Também serão abordados o gerenciador de pacotes pip — com exemplos de instalação — e conceitos iniciais de Python, incluindo tipos de dados, listas, estruturas de controle, importação de bibliotecas e boas práticas de codificação.
+
+# -------------------------
+
+# Parte 2: O que é Git e GitHub e para que servem
+
+Veja a imagem abaixo:
+
+![Exemplo de logo do Git e do GitHub](git-github.jpg)
+
+## O que é Git:
+Git é um sistema de controle de versão distribuído, utilizado para registrar alterações em arquivos de código ao longo do tempo.
+
+## O que é GitHub:
+GitHub é um serviço em nuvem, com repositórios remotos que usa o Git como sistema de controle.
+
+## Para que servem o Git e GitHub:
+- Hospedar repertórios
+- Manter monitorado diferentes versões de um código
+- Criar histórico de alterações
+- Compartilhar projetos publicamente ou de forma privada
+
+## Podemos usar como exemplo:
+- Publicação de aplicativos por desenvolvedores
+- Usado como ferramenta para estudo por meio de estudantes
+- Criar projetos internos de empresas
+# -------------------------
+
+# Parte 3: Comandos básicos do Git (não são executados no Python, mas no terminal):
+
+git init         -> Inicia um novo repositório Git
+git add .        -> Adiciona todos os arquivos para controle de versão
+git commit -m "" -> Cria um registro das mudanças
+git push         -> Envia as alterações para o GitHub
+git pull         -> Baixa alterações do GitHub
+git clone        -> Copia um repositório do GitHub para sua máquina
+
+# -------------------------
+
+# Parte 4: O que é um repositório e um commit
+
+## O que é um repositório?
+É como uma pasta do projeto que guarda todo o histórico versionado. 
+
+## O que é um commit?
+Um "snapshot" (foto) do estado do seu código com uma mensagem explicativa.
+Realizar um commit no Git registra alterações feitas em um ou mais arquivos. Cada commit recebe um identificador único, chamado de SHA ou hash.
+
+# Parte 5: O que é pip?
+É um pacote que já vem instalado no Python, o pip é um gerenciador de pacotes, no uqal gerencia  bibliotecas que irá instalar, desinstalar e atualizar dentro do computador.
+
+## Como instalar o pip install
+Sua instalação é feita pelo terminal, utilizando o comando:
+
+```bash
+pip install nome-do-pacote
+
+Como veremos nos exemplos a seguir.
+
+## Exemplo de bibliotecas
+Uma biblioteca é um pacote de códigos que alguém já construiu que irá ser instalado no computador para não ter que criar as coisas do zero. Diante disso, podemos citar como exemplo de bibliotecas:
+- pandas: ela não vem instalada automaticamente no Python, onde só é necessário baixar uma única vez e utilizá-la da forma que preferir.
+
+```bash
+pip install pandas
+
+- os e time: são bibliotecas que já vem instalada no Python.
+
