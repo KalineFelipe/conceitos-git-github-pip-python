@@ -26,18 +26,22 @@ A imagem abaixo mostra a logo do Git e GitHub:
 ![Logo Git ou GitHub](git-github){width=400px}
 
 ## O que é Git:
+
 Git é um sistema de controle de versão distribuído, utilizado para registrar alterações em arquivos de código ao longo do tempo.
 
 ## O que é GitHub:
+
 GitHub é um serviço em nuvem, com repositórios remotos que usa o Git como sistema de controle.
 
 ## Para que servem o Git e GitHub:
+
 - Hospedar repertórios
 - Manter monitorado diferentes versões de um código
 - Criar histórico de alterações
 - Compartilhar projetos publicamente ou de forma privada
 
 ## Podemos usar como exemplo:
+
 - Publicação de aplicativos por desenvolvedores
 - Usado como ferramenta para estudo por meio de estudantes
 - Criar projetos internos de empresas
@@ -57,14 +61,17 @@ git clone        -> Copia um repositório do GitHub para sua máquina
 # Parte 4: O que é um repositório e um commit
 
 ## O que é um repositório?
+
 É uma pasta do projeto que guarda todo o histórico versionado. 
 
 ## O que é um commit?
+
 Um "snapshot" (foto) do estado do seu código com uma mensagem explicativa.
 Realizar um commit no Git registra alterações feitas em um ou mais arquivos. Cada commit recebe um identificador único, chamado de SHA ou hash.
 
 # Parte 5: O que é pip?
-É um pacote que já vem instalado no Python, o pip é um gerenciador de pacotes, no uqal gerencia  bibliotecas que irá instalar, desinstalar e atualizar dentro do computador.
+
+O pipi geralmente já vem instalado junto com o Python, mas em algumas instalações pode ser necessário ativá-lo ou instalá-lo separadamente. Ele gerencia bibliotecas que irá instalar, desinstalar e atualizar dentro do computador.
 
 ## Como instalar o pip install
 Sua instalação é feita pelo terminal, utilizando o comando:
@@ -75,7 +82,9 @@ pip install nome-do-pacote
 Como veremos nos exemplos a seguir.
 
 ## Exemplo de bibliotecas
+
 Uma biblioteca é um pacote de códigos que alguém já construiu que irá ser instalado no computador para não ter que criar as coisas do zero. Diante disso, podemos citar como exemplo de bibliotecas:
+
 - pandas: ela não vem instalada automaticamente no Python, onde só é necessário baixar uma única vez e utilizá-la da forma que preferir.
 
 ```bash
@@ -83,7 +92,7 @@ pip install pandas
 
 Um característica do pandas é a capacidade de traduzir operações complexas com dados em um ou dois comandos.
 - os e time: são bibliotecas que já vem instalada no Python.
-- numpy: essencial para cálculos numéricos e científicos do Python. É ela que nos permite trabalhar com matrizes, nos oferencendo ferramentas para realizar operações matemáticas eficientes e rápidas.
+- numpy: essencial para cálculos numéricos e científicos do Python. É ela que nos permite trabalhar com matrizes, nos oferecendo ferramentas para realizar operações matemáticas eficientes e rápidas.
 Assim como o pandas o numpy para instalar é:
 
 ```bash
@@ -94,7 +103,7 @@ pip install numpy
 gráficos de barras,
 gráficos de linhas,
 gráficos de pizza,
-histogramas e muito mais.
+histogramas e dentre outros.
 
 O matplotlib é muito útil para visualizar dados de forma clara. Tanto o pandas e o seaborn usam o matplotlib.
 
@@ -124,21 +133,266 @@ Os comentários são adicionais usando # no início da linha, enquanto que os co
 Dessa forma, é importante entender os tipos de dados básicos do Python. Eles são usados para armazenar diferentes tipos de informações.
 
 ## Tipos de dados principais:
+
 - int (inteiro): são números que não tem a vírgula, ou seja, um número que é escrito sem componente decimal, que pode ser positivo ou negativo.
+
 Como por exemplo:
+
 idade = 35
 
 - float (ponto flutuante): quer dizer ponto flutuante ou decimal, composto por algarismos decimais.
+
 Por exemplo:
+
 altura = 1.65
 
 - str (string): são cadeias de caracteres, assim como um conjunto de números entre aspas, por exemplo:
+
 nome = "Kaline"
 cpf = "000.111.222-33"
 
 - bool (valor booleano): representa valores TRUE ou FALSE para alguma condição que será pedida. Tais como:
 tem_bolsa = True
 
-Ou seja, os dados são espaços na memória onde armazenar valores que servem para nomear e guardar informações que podem ser usadas posyeriormente no programa.
+Ou seja, os dados são espaços na memória onde armazenar valores que servem para nomear e guardar informações que podem ser usadas posteriormente no programa.
 
 # Parte 7: Variáveis e operadores básicos
+
+Uma variável no Python é criada quando se atribui um valor a ela usando o sinal de igual = .
+
+Tomamos como exemplo:
+
+nome = "Kaline"
+idade = 35
+altura = 1.65
+
+Assim, podemos observar que temos uma string que é um texto, um número inteiro e um número decimal.
+
+## Operadores básicos
+
+Podemos também usar operadores para fazer contas:
+
+Como por exemplo:
+
+soma = 3 + 3       # Adição → 6
+sub = 9 - 4       # Subtração → 5
+mult = 3 * 3       # Multiplicação → 9
+div = 10 / 2       # Divisão → 5.0
+
+Assi, essas três estruturas são muito importantes em Python, pois permitem organizar e trabalhar com conjuntos de dados de forma simples e eficiente. Cada uma tem suas características específicas, e escolher a que mais se adequa depende do que se deseja fazer no programa.
+
+# Parte 8: Listas, tuplas e dicionários
+
+São estruturas que permitem agrupar vários valores em um único conjunto, facilitando a organização e o uso dos dados. Esses agrupadores podem conter diferentes tipos de elementos, tais como: 
+- números
+- textos
+- outras listas
+
+## Listas
+Uma lista é uma sequência de valores organizados em ordem, onde cada valor tem uma posição (índice) que começa em zero.
+
+Ela é mutável, ou seja, podemos mudar os valores depois de criar a lista.
+
+As listas são criadas usando colchetes [].
+
+Exemplo:
+
+lista_val = [6, 7, 8]
+
+Aqui podemos observar uma lista com três valores. Pode ser acessado ou alterado qualquer valor da lista pelo seu índice.
+
+Por exemplo:
+
+print(lista_val[0])  # Mostra 6
+lista_val[1] = 10    # Troca o valor 7 por 10
+
+## Tuplas:
+
+As tuplas são parecidas com as listas, porém, com uma diferença importantíssima: NÃO podem ser alteradas depois de criadas. Isso significa que não é possível adicionar, remover ou modificar elementos dentro de uma tupla.
+
+Elas são usadas quando queremos garantir que os dados permaneçam sempre os mesmos, oferecendo mais segurança ao código.
+
+As tuplas são criadas com parênteses ().
+
+Como por exemplo:
+
+tupla_val = (4, 5, 6)
+
+Se tentarmos mudar algum valor, como neste exemplo:
+
+tupla_val[1] = 7
+
+O Python vai mostrar um erro, pois tuplas são imutáveis.
+
+Uma das principais utilidades das tuplas é nas operações de empacotamento (juntar valores) e desempacotamento (separar valores), o que pode facilitar a organização dos dados no código.
+
+## Dicionários
+
+Semelhante as listas, dicionários são sequências de valores mutáveis, 
+o que diferencia é que nos dicionários pode ser atribuído uma palavra-chave para identicar cada elemento da sequência, facilitando seu acesso posteriormente. 
+
+Um dicionário em Python é uma estrutura que armazena dados em pares de chave e valor. Cada chave é única e está associada a um valor, dessa forma, podemos acessar ou modificar os valores usando suas chaves.
+
+Os dicionários são criados com chaves {}.
+
+Tomamos como exemplo:
+
+dados_pessoa = {
+    "nome": "Kaline",
+    "idade": 35,
+    "cidade": "Recife"
+}
+
+Nesse exemplo, "nome", "idade" e "cidade" são as chaves, e "Kaline", 35, "Recife" são os valores associados.
+
+# Parte 9: Estruturas de controle
+
+As estruturas de controle são comandos que permitem tomar decisões (if, elif, else) e repetir ações (for, while).
+
+Na linguegem Python, podemos usar:
+
+- if → para executar algo se a condição for verdadeira;
+- if...else → para escolher entre duas opções;
+- if...elif...else → para verificar várias condições diferentes antes de tomar uma decisão.
+
+Assim, essas estruturas são fundamentais para criar programas que interajam com os dados e executem tarefas de forma dinâmica.
+
+# Parte 10: Funções 
+
+São blocos de código reutilizáveis que recebem um nome. Ajudam a organizar o programa e evitam repetição de código. 
+
+Podemos criar uma função uma vez e usá-la quantas vezes quiser.
+
+## Def
+
+Em Python, usamos a palavra-chave def para definir uma função, dessa forma def, é uma palavra-chave, que indica o início da definição de uma função.
+
+Estrutura básica:
+
+def nome_da_função(parâmetros):
+    # comandos da função
+
+Como por exemplo de função simples:
+
+def hello():
+    print("Olá Mundo!!!")
+
+Para usar a função, basta chamar pelo nome:
+
+hello()
+
+Saída:
+
+Olá Mundo!!!
+
+## Parâmetros
+
+Parâmetros são variáveis que colocamos entre parênteses na definição de uma função. Que quando fazemos o chammamento da função, passamos valores reais para esses parâmetros, assim, esses valores são chamados de argumentos.
+
+Esses argumentos permitem que a função mude seu comportamento dependendo dos valores recebidos.
+
+Como por exemplo: 
+Função que mostra o maior entre dois números
+
+def maior(x, y):
+    if x > y:
+        print(x)
+    else:
+        print(y)
+
+Chamando a função:
+
+maior(4, 7)
+
+Saída:
+
+7
+
+Dessa forma, podemos observar que nesse exemplo:
+
+- x e y são os parâmetros
+- 4 e 7 são os argumentos passados quando a função é chamada
+- A função compara os dois valores e imprime o maior
+
+## Retorno
+
+O comando return é usado dentro de uma função quando queremos devolver um valor como resultado. Além disso, ele encerra a execução da função naquele ponto.
+
+Se não utilizarmos o return, a função não vai devolver nenhum valor útil — nesse caso, ela retorna automaticamente o valor especial None, que representa a ausência de resultado.
+
+Podemos observar como exemplo com return:
+
+def soma(a, b):
+    return a + b
+
+Chamando a função:
+
+resultado = soma(3, 4)
+print(resultado)  # Vai mostrar 7
+
+Dessa forma, além de criar nossas próprias funções, o Python também oferece várias funções prontas por meio das bibliotecas que para ter acesso a essas funções já construídas, precisamos aprender a importar essas bibliotecas.
+
+# Parte 11: Importação de bibliotecas com import
+
+As bibliotecas são conjuntos de funções prontas que podemos usar a qualquer momento no nosso programa. Elas ajudam a facilitar o código, pois evitam que precise escrever tudo do zero.
+
+Muitas bibliotecas já vêm instaladas com o Python. Para utilizá-la é preciso importar com o comando import.
+
+Tomamos como exemplo a biblioteca math (usada para cálculos matemáticos):
+
+import math
+print(math.factorial(6))  # Calcula o fatorial de 6
+
+Podemos importar também apenas uma função específica da biblioteca:
+
+from math import factorial
+print(factorial(6))  # Mesmo resultado, sem precisar escrever math.
+
+Assim, o uso de bibliotecas torna o desenvolvimento em Python muito mais rápido e eficiente, pois permite reutilizar funções confiáveis e testadas. Saber como e quando utilizá-las é essencial para escrever códigos mais limpos, simples e eficazes.
+
+# Parte 12: Boas práticas: 
+
+Para que o código fique organizado e fácil de entendimento, é importante seguir algumas boas práticas de programação. Isso não só facilita o nosso trabalho mais o de quem precisar ler ou utilizar o código no futuro.
+
+## Comentários
+
+Servem para explicar o que o código faz. Eles não são executados pelo Python, mas ajudam a entender melhor cada parte do programa.
+
+Podemos tomar como exemplo a mensagem de saudação que já utilizamos anteriormente:
+
+# Esta função exibe uma mensagem de saudação
+def saudacao():
+    print("Olá, tudo bem?")
+
+## Nomes de Variáveis
+
+Usar nomes claros e com significado facilita a leitura do código. Evite usar nomes curtos ou sem sentido.
+
+Por exemplo:
+
+# Nome ruim
+a = 35
+
+# Nome claro
+idade = 35
+
+## Indentação
+
+É o recuo usado para organizar os blocos de código. Na linguagem Python, ela é obrigatória e mostra onde começa e onde termina cada parte do programa.
+
+Exemplo:
+
+if idade >= 18:
+    print("Maior de idade")
+
+Diante do exposto, podemos concluir que seguindo essas dicas simples, seu código ficará mais limpo, fácil de entender e mais profissional.
+
+# Parte 13 Considerações Finais
+
+Ao longo deste trabalho, foi possível compreender a importância das ferramentas Git e GitHub no controle de versões e colaboração em projetos de programação. Também foram explorados conceitos fundamentais de Python, como tipos de dados, estruturas de controle, funções e o uso de bibliotecas externas com o gerenciador de pacotes pip.
+
+Assim, entender esses conceitos é de extrema importância para quem deseja iniciar na programação ou desenvolver projetos de forma mais organizada e eficiente. Além disso, o uso de boas práticas, como nomeação clara de variáveis, comentários e indentação correta, contribui diretamente para a qualidade e manutenção do código. Dominar essas ferramentas e conceitos representa um passo importante na formação de qualquer programador.
+
+# Parte 14: Referências
+
+
