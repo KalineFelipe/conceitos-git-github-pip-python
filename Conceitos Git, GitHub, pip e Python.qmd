@@ -98,12 +98,47 @@ histogramas e muito mais.
 
 O matplotlib é muito útil para visualizar dados de forma clara. Tanto o pandas e o seaborn usam o matplotlib.
 
-- requests: Biblioteca do Python usada para acessar sites e serviços da internet. Com ela, o Python pode visitar uma página ou conversar com sistemas que enviam ou recebem dados, como as APIs.
+- requests: biblioteca do Python usada para acessar sites e serviços da internet. Com ela, o Python pode visitar uma página ou conversar com sistemas que enviam ou recebem dados, como as APIs.
 
 Ela é muito útil quando queremos:
 
 Buscar informações em um site;
-
 Baixar dados automaticamente;
-
 Enviar dados para outro sistema.
+
+No entanto, para utilizar bem essas ferramentas, é essencial compreender os fundamentos da linguagem Python. A seguir, poderemos conhecer os conceitos básicos que formam a base para qualquer projeto em Python.
+
+# Parte 6: Conceitos iniciais de Python
+
+Criada por Guido Van Rossumem, em 1991, a linguagem de programação Python tem a finalidade de ser uma linguagem simples e de fácil compreensão. Pode ser usada para desenvolver e administrar grandes sistemas. Por se tratar de um software livre no qual permite que usuários e colaboradores possam modificar seu código fonte e compartilhar essas novas atualizações.
+
+Uma das principais vantagens em utilizar o Python é o grande número de bibliotecas disponíveis, tais como:
+ 
+- numpy;
+- sciPy;
+- pandas;
+- dentre outras.
+
+Os comentários são adicionais usando # no início da linha, enquanto que os comentários em blocos, ocupando várias linhas, podem ser definidos entre 3 aspas duplas.
+
+Dessa forma, é importante entender os tipos de dados básicos do Python. Eles são usados para armazenar diferentes tipos de informações.
+
+## Tipos de dados principais:
+- int (inteiro): são números que não tem a vírgula, ou seja, um número que é escrito sem componente decimal, que pode ser positivo ou negativo.
+Como por exemplo:
+idade = 35
+
+- float (ponto flutuante): quer dizer ponto flutuante ou decimal, composto por algarismos decimais.
+Por exemplo:
+altura = 1.65
+
+- str (string): são cadeias de caracteres, assim como um conjunto de números entre aspas, por exemplo:
+nome = "Kaline"
+cpf = "000.111.222-33"
+
+- bool (valor booleano): representa valores TRUE ou FALSE para alguma condição que será pedida. Tais como:
+tem_bolsa = True
+
+Ou seja, os dados são espaços na memória onde armazenar valores que servem para nomear e guardar informações que podem ser usadas posyeriormente no programa.
+
+# Parte 7: Variáveis e operadores básicos
