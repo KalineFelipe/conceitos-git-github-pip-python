@@ -21,9 +21,9 @@ Este trabalho tem como objetivo apresentar alguns conceitos de programação, co
 
 # Parte 2: O que é Git e GitHub e para que servem
 
-Veja a imagem abaixo:
+A imagem abaixo mostra a logo do Git e GitHub:
 
-![Exemplo de logo do Git e do GitHub](git-github.jpg)
+![Logo Git ou GitHub](git-github){width=400px}
 
 ## O que é Git:
 Git é um sistema de controle de versão distribuído, utilizado para registrar alterações em arquivos de código ao longo do tempo.
@@ -57,7 +57,7 @@ git clone        -> Copia um repositório do GitHub para sua máquina
 # Parte 4: O que é um repositório e um commit
 
 ## O que é um repositório?
-É como uma pasta do projeto que guarda todo o histórico versionado. 
+É uma pasta do projeto que guarda todo o histórico versionado. 
 
 ## O que é um commit?
 Um "snapshot" (foto) do estado do seu código com uma mensagem explicativa.
@@ -81,5 +81,29 @@ Uma biblioteca é um pacote de códigos que alguém já construiu que irá ser i
 ```bash
 pip install pandas
 
+Um característica do pandas é a capacidade de traduzir operações complexas com dados em um ou dois comandos.
 - os e time: são bibliotecas que já vem instalada no Python.
+- numpy: essencial para cálculos numéricos e científicos do Python. É ela que nos permite trabalhar com matrizes, nos oferencendo ferramentas para realizar operações matemáticas eficientes e rápidas.
+Assim como o pandas o numpy para instalar é:
 
+```bash
+pip install numpy
+
+- matplotlib: também biblioteca do Python usada para criar gráficos. Com ela, podemos fazer vários tipos de gráficos, como:
+
+gráficos de barras,
+gráficos de linhas,
+gráficos de pizza,
+histogramas e muito mais.
+
+O matplotlib é muito útil para visualizar dados de forma clara. Tanto o pandas e o seaborn usam o matplotlib.
+
+- requests: Biblioteca do Python usada para acessar sites e serviços da internet. Com ela, o Python pode visitar uma página ou conversar com sistemas que enviam ou recebem dados, como as APIs.
+
+Ela é muito útil quando queremos:
+
+Buscar informações em um site;
+
+Baixar dados automaticamente;
+
+Enviar dados para outro sistema.
