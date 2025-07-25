@@ -1,17 +1,17 @@
 ---
-title: "Conceitos Git, GitHub, pip e Python"
-author: "Kaline de Almeida Felipe"
-date: "Julho de 2025"
+titulo: "Conceitos Git, GitHub, pip e Python"
+autor: "Kaline de Almeida Felipe"
+data: "Julho de 2025"
 format:
   html:
     theme: default
     toc: true
-    page-layout: tufte
+    page-layout: full   # ou article
     margin-contained: true
 execute:
   echo: true
-bibliography: referencias.bib
-csl: apa.csl  # você pode trocar por abnt.csl, se quiser o estilo ABNT
+bibliografia: referencias.bib
+csl: apa.csl  # ou abnt.csl, se quiser estilo ABNT
 ---
 
 # -------------------------

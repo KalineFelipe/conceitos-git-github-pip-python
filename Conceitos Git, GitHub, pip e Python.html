@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>conceitos-git-github-pip-e-python</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="Conceitos Git, GitHub, pip e Python_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Conceitos Git, GitHub, pip e Python_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Conceitos Git, GitHub, pip e Python_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Conceitos Git, GitHub, pip e Python_files/libs/quarto-html/popper.min.js"></script>
+<script src="Conceitos Git, GitHub, pip e Python_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Conceitos Git, GitHub, pip e Python_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Conceitos Git, GitHub, pip e Python_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Conceitos Git, GitHub, pip e Python_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Conceitos Git, GitHub, pip e Python_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Conceitos Git, GitHub, pip e Python_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Conceitos Git, GitHub, pip e Python_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">————————-</a></li>
+  <li><a href="#parte-1-introdução" id="toc-parte-1-introdução" class="nav-link" data-scroll-target="#parte-1-introdução">Parte 1: Introdução</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">————————-</a></li>
+  <li><a href="#parte-2-o-que-é-git-e-github-e-para-que-servem" id="toc-parte-2-o-que-é-git-e-github-e-para-que-servem" class="nav-link" data-scroll-target="#parte-2-o-que-é-git-e-github-e-para-que-servem">Parte 2: O que é Git e GitHub e para que servem</a>
+  <ul class="collapse">
+  <li><a href="#o-que-é-git" id="toc-o-que-é-git" class="nav-link" data-scroll-target="#o-que-é-git">O que é Git:</a></li>
+  <li><a href="#o-que-é-github" id="toc-o-que-é-github" class="nav-link" data-scroll-target="#o-que-é-github">O que é GitHub:</a></li>
+  <li><a href="#para-que-servem-o-git-e-github" id="toc-para-que-servem-o-git-e-github" class="nav-link" data-scroll-target="#para-que-servem-o-git-e-github">Para que servem o Git e GitHub:</a></li>
+  <li><a href="#podemos-usar-como-exemplo" id="toc-podemos-usar-como-exemplo" class="nav-link" data-scroll-target="#podemos-usar-como-exemplo">Podemos usar como exemplo:</a></li>
+  </ul></li>
+  <li><a href="#parte-3-comandos-básicos-do-git-não-são-executados-no-python-mas-no-terminal" id="toc-parte-3-comandos-básicos-do-git-não-são-executados-no-python-mas-no-terminal" class="nav-link" data-scroll-target="#parte-3-comandos-básicos-do-git-não-são-executados-no-python-mas-no-terminal">Parte 3: Comandos básicos do Git (não são executados no Python, mas no terminal):</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">————————-</a></li>
+  <li><a href="#parte-4-o-que-é-um-repositório-e-um-commit" id="toc-parte-4-o-que-é-um-repositório-e-um-commit" class="nav-link" data-scroll-target="#parte-4-o-que-é-um-repositório-e-um-commit">Parte 4: O que é um repositório e um commit</a>
+  <ul class="collapse">
+  <li><a href="#o-que-é-um-repositório" id="toc-o-que-é-um-repositório" class="nav-link" data-scroll-target="#o-que-é-um-repositório">O que é um repositório?</a></li>
+  <li><a href="#o-que-é-um-commit" id="toc-o-que-é-um-commit" class="nav-link" data-scroll-target="#o-que-é-um-commit">O que é um commit?</a></li>
+  </ul></li>
+  <li><a href="#parte-5-o-que-é-pip" id="toc-parte-5-o-que-é-pip" class="nav-link" data-scroll-target="#parte-5-o-que-é-pip">Parte 5: O que é pip?</a>
+  <ul class="collapse">
+  <li><a href="#como-instalar-o-pip-install" id="toc-como-instalar-o-pip-install" class="nav-link" data-scroll-target="#como-instalar-o-pip-install">Como instalar o pip install</a></li>
+  <li><a href="#exemplo-de-bibliotecas" id="toc-exemplo-de-bibliotecas" class="nav-link" data-scroll-target="#exemplo-de-bibliotecas">Exemplo de bibliotecas</a></li>
+  </ul></li>
+  <li><a href="#parte-6-conceitos-iniciais-de-python" id="toc-parte-6-conceitos-iniciais-de-python" class="nav-link" data-scroll-target="#parte-6-conceitos-iniciais-de-python">Parte 6: Conceitos iniciais de Python</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-dados-principais" id="toc-tipos-de-dados-principais" class="nav-link" data-scroll-target="#tipos-de-dados-principais">Tipos de dados principais:</a></li>
+  </ul></li>
+  <li><a href="#parte-7-variáveis-e-operadores-básicos" id="toc-parte-7-variáveis-e-operadores-básicos" class="nav-link" data-scroll-target="#parte-7-variáveis-e-operadores-básicos">Parte 7: Variáveis e operadores básicos</a>
+  <ul class="collapse">
+  <li><a href="#operadores-básicos" id="toc-operadores-básicos" class="nav-link" data-scroll-target="#operadores-básicos">Operadores básicos</a></li>
+  </ul></li>
+  <li><a href="#parte-8-listas-tuplas-e-dicionários" id="toc-parte-8-listas-tuplas-e-dicionários" class="nav-link" data-scroll-target="#parte-8-listas-tuplas-e-dicionários">Parte 8: Listas, tuplas e dicionários</a>
+  <ul class="collapse">
+  <li><a href="#listas" id="toc-listas" class="nav-link" data-scroll-target="#listas">Listas</a></li>
+  <li><a href="#tuplas" id="toc-tuplas" class="nav-link" data-scroll-target="#tuplas">Tuplas:</a></li>
+  <li><a href="#dicionários" id="toc-dicionários" class="nav-link" data-scroll-target="#dicionários">Dicionários</a></li>
+  </ul></li>
+  <li><a href="#parte-9-estruturas-de-controle" id="toc-parte-9-estruturas-de-controle" class="nav-link" data-scroll-target="#parte-9-estruturas-de-controle">Parte 9: Estruturas de controle</a></li>
+  <li><a href="#parte-10-funções" id="toc-parte-10-funções" class="nav-link" data-scroll-target="#parte-10-funções">Parte 10: Funções</a>
+  <ul class="collapse">
+  <li><a href="#def" id="toc-def" class="nav-link" data-scroll-target="#def">Def</a></li>
+  <li><a href="#parâmetros" id="toc-parâmetros" class="nav-link" data-scroll-target="#parâmetros">Parâmetros</a></li>
+  <li><a href="#retorno" id="toc-retorno" class="nav-link" data-scroll-target="#retorno">Retorno</a></li>
+  </ul></li>
+  <li><a href="#parte-11-importação-de-bibliotecas-com-import" id="toc-parte-11-importação-de-bibliotecas-com-import" class="nav-link" data-scroll-target="#parte-11-importação-de-bibliotecas-com-import">Parte 11: Importação de bibliotecas com import</a></li>
+  <li><a href="#parte-12-boas-práticas" id="toc-parte-12-boas-práticas" class="nav-link" data-scroll-target="#parte-12-boas-práticas">Parte 12: Boas práticas:</a>
+  <ul class="collapse">
+  <li><a href="#comentários" id="toc-comentários" class="nav-link" data-scroll-target="#comentários">Comentários</a></li>
+  </ul></li>
+  <li><a href="#esta-função-exibe-uma-mensagem-de-saudação" id="toc-esta-função-exibe-uma-mensagem-de-saudação" class="nav-link" data-scroll-target="#esta-função-exibe-uma-mensagem-de-saudação">Esta função exibe uma mensagem de saudação</a>
+  <ul class="collapse">
+  <li><a href="#nomes-de-variáveis" id="toc-nomes-de-variáveis" class="nav-link" data-scroll-target="#nomes-de-variáveis">Nomes de Variáveis</a></li>
+  </ul></li>
+  <li><a href="#nome-ruim" id="toc-nome-ruim" class="nav-link" data-scroll-target="#nome-ruim">Nome ruim</a></li>
+  <li><a href="#nome-claro" id="toc-nome-claro" class="nav-link" data-scroll-target="#nome-claro">Nome claro</a>
+  <ul class="collapse">
+  <li><a href="#indentação" id="toc-indentação" class="nav-link" data-scroll-target="#indentação">Indentação</a></li>
+  </ul></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências">Referências</a></li>
+  <li><a href="#parte-13-considerações-finais" id="toc-parte-13-considerações-finais" class="nav-link" data-scroll-target="#parte-13-considerações-finais">Parte 13 Considerações Finais</a></li>
+  <li><a href="#parte-14-referências" id="toc-parte-14-referências" class="nav-link" data-scroll-target="#parte-14-referências">Parte 14: Referências</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content column-page-left" id="quarto-document-content">
+
+
+
+
+<section id="section" class="level1">
+<h1>————————-</h1>
+</section>
+<section id="parte-1-introdução" class="level1">
+<h1>Parte 1: Introdução</h1>
+<p>Este trabalho tem como objetivo apresentar alguns conceitos de programação, como o que são e para que servem o Git e o GitHub, além de seus principais comandos. Também serão abordados o gerenciador de pacotes pip — com exemplos de instalação — e conceitos iniciais de Python, incluindo tipos de dados, listas, estruturas de controle, importação de bibliotecas e boas práticas de codificação.</p>
+</section>
+<section id="section-1" class="level1">
+<h1>————————-</h1>
+</section>
+<section id="parte-2-o-que-é-git-e-github-e-para-que-servem" class="level1">
+<h1>Parte 2: O que é Git e GitHub e para que servem</h1>
+<p>A imagem abaixo mostra a logo do Git e GitHub:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="git-github.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>Logo Git ou GitHub</figcaption>
+</figure>
+</div>
+<section id="o-que-é-git" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-é-git">O que é Git:</h2>
+<p>Git é um sistema de controle de versão distribuído, utilizado para registrar alterações em arquivos de código ao longo do tempo.</p>
+</section>
+<section id="o-que-é-github" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-é-github">O que é GitHub:</h2>
+<p>GitHub é um serviço em nuvem, com repositórios remotos que usa o Git como sistema de controle.</p>
+</section>
+<section id="para-que-servem-o-git-e-github" class="level2">
+<h2 class="anchored" data-anchor-id="para-que-servem-o-git-e-github">Para que servem o Git e GitHub:</h2>
+<ul>
+<li>Hospedar repertórios</li>
+<li>Manter monitorado diferentes versões de um código</li>
+<li>Criar histórico de alterações</li>
+<li>Compartilhar projetos publicamente ou de forma privada</li>
+</ul>
+</section>
+<section id="podemos-usar-como-exemplo" class="level2">
+<h2 class="anchored" data-anchor-id="podemos-usar-como-exemplo">Podemos usar como exemplo:</h2>
+<ul>
+<li>Publicação de aplicativos por desenvolvedores</li>
+<li>Usado como ferramenta para estudo por meio de estudantes</li>
+<li>Criar projetos internos de empresas # ————————-</li>
+</ul>
+</section>
+</section>
+<section id="parte-3-comandos-básicos-do-git-não-são-executados-no-python-mas-no-terminal" class="level1">
+<h1>Parte 3: Comandos básicos do Git (não são executados no Python, mas no terminal):</h1>
+<p>git init -&gt; Inicia um novo repositório Git git add . -&gt; Adiciona todos os arquivos para controle de versão git commit -m “” -&gt; Cria um registro das mudanças git push -&gt; Envia as alterações para o GitHub git pull -&gt; Baixa alterações do GitHub git clone -&gt; Copia um repositório do GitHub para sua máquina</p>
+</section>
+<section id="section-2" class="level1">
+<h1>————————-</h1>
+</section>
+<section id="parte-4-o-que-é-um-repositório-e-um-commit" class="level1">
+<h1>Parte 4: O que é um repositório e um commit</h1>
+<section id="o-que-é-um-repositório" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-é-um-repositório">O que é um repositório?</h2>
+<p>É uma pasta do projeto que guarda todo o histórico versionado.</p>
+</section>
+<section id="o-que-é-um-commit" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-é-um-commit">O que é um commit?</h2>
+<p>Um “snapshot” do estado do seu código com uma mensagem explicativa. Realizar um commit no Git registra alterações feitas em um ou mais arquivos. Cada commit recebe um identificador único, chamado de SHA ou hash.</p>
+</section>
+</section>
+<section id="parte-5-o-que-é-pip" class="level1">
+<h1>Parte 5: O que é pip?</h1>
+<p>O pip geralmente já vem instalado junto com o Python, mas em algumas instalações pode ser necessário ativá-lo ou instalá-lo separadamente. Ele gerencia bibliotecas que irá instalar, desinstalar e atualizar dentro do computador.</p>
+<section id="como-instalar-o-pip-install" class="level2">
+<h2 class="anchored" data-anchor-id="como-instalar-o-pip-install">Como instalar o pip install</h2>
+<p>Sua instalação é feita pelo terminal, utilizando o comando:</p>
+<p>```bash pip install nome-do-pacote</p>
+<p>Como veremos nos exemplos a seguir.</p>
+</section>
+<section id="exemplo-de-bibliotecas" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-de-bibliotecas">Exemplo de bibliotecas</h2>
+<p>Uma biblioteca é um pacote de códigos que alguém já construiu que irá ser instalado no computador para não ter que criar as coisas do zero. Diante disso, podemos citar como exemplo de bibliotecas:</p>
+<ul>
+<li>pandas: ela não vem instalada automaticamente no Python, onde só é necessário baixar uma única vez e utilizá-la da forma que preferir.</li>
+</ul>
+<p>```bash pip install pandas</p>
+<p>Um característica do pandas é a capacidade de traduzir operações complexas com dados em um ou dois comandos. - os e time: são bibliotecas que já vem instalada no Python. - numpy: essencial para cálculos numéricos e científicos do Python. É ela que nos permite trabalhar com matrizes, nos oferecendo ferramentas para realizar operações matemáticas eficientes e rápidas. Assim como o pandas o numpy para instalar é:</p>
+<p>```bash pip install numpy</p>
+<ul>
+<li>matplotlib: também biblioteca do Python usada para criar gráficos. Com ela, podemos fazer vários tipos de gráficos, como:</li>
+</ul>
+<p>gráficos de barras, gráficos de linhas, gráficos de pizza, histogramas e dentre outros.</p>
+<p>O matplotlib é muito útil para visualizar dados de forma clara. Tanto o pandas e o seaborn usam o matplotlib.</p>
+<ul>
+<li>requests: biblioteca do Python usada para acessar sites e serviços da internet. Com ela, o Python pode visitar uma página ou conversar com sistemas que enviam ou recebem dados, como as APIs.</li>
+</ul>
+<p>Ela é muito útil quando queremos:</p>
+<p>Buscar informações em um site; Baixar dados automaticamente; Enviar dados para outro sistema.</p>
+<p>No entanto, para utilizar bem essas ferramentas, é essencial compreender os fundamentos da linguagem Python. A seguir, poderemos conhecer os conceitos básicos que formam a base para qualquer projeto em Python.</p>
+</section>
+</section>
+<section id="parte-6-conceitos-iniciais-de-python" class="level1">
+<h1>Parte 6: Conceitos iniciais de Python</h1>
+<p>Criada por Guido Van Rossumem, em 1991, a linguagem de programação Python tem a finalidade de ser uma linguagem simples e de fácil compreensão. Pode ser usada para desenvolver e administrar grandes sistemas. Por se tratar de um software livre no qual permite que usuários e colaboradores possam modificar seu código fonte e compartilhar essas novas atualizações.</p>
+<p>Uma das principais vantagens em utilizar o Python é o grande número de bibliotecas disponíveis, tais como:</p>
+<ul>
+<li>numpy;</li>
+<li>sciPy;</li>
+<li>pandas;</li>
+<li>dentre outras.</li>
+</ul>
+<p>Os comentários são adicionais usando # no início da linha, enquanto que os comentários em blocos, ocupando várias linhas, podem ser definidos entre 3 aspas duplas.</p>
+<p>Dessa forma, é importante entender os tipos de dados básicos do Python. Eles são usados para armazenar diferentes tipos de informações.</p>
+<section id="tipos-de-dados-principais" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-dados-principais">Tipos de dados principais:</h2>
+<ul>
+<li>int (inteiro): são números que não tem a vírgula, ou seja, um número que é escrito sem componente decimal, que pode ser positivo ou negativo.</li>
+</ul>
+<p>Como por exemplo:</p>
+<p>idade = 35</p>
+<ul>
+<li>float (ponto flutuante): quer dizer ponto flutuante ou decimal, composto por algarismos decimais.</li>
+</ul>
+<p>Por exemplo:</p>
+<p>altura = 1.65</p>
+<ul>
+<li>str (string): são cadeias de caracteres, assim como um conjunto de números entre aspas, por exemplo:</li>
+</ul>
+<p>nome = “Kaline” cpf = “000.111.222-33”</p>
+<ul>
+<li>bool (valor booleano): representa valores TRUE ou FALSE para alguma condição que será pedida. Tais como: tem_bolsa = True</li>
+</ul>
+<p>Ou seja, os dados são espaços na memória onde armazenar valores que servem para nomear e guardar informações que podem ser usadas posteriormente no programa.</p>
+</section>
+</section>
+<section id="parte-7-variáveis-e-operadores-básicos" class="level1">
+<h1>Parte 7: Variáveis e operadores básicos</h1>
+<p>Uma variável no Python é criada quando se atribui um valor a ela usando o sinal de igual = .</p>
+<p>Tomamos como exemplo:</p>
+<p>nome = “Kaline” idade = 35 altura = 1.65</p>
+<p>Assim, podemos observar que temos uma string que é um texto, um número inteiro e um número decimal.</p>
+<section id="operadores-básicos" class="level2">
+<h2 class="anchored" data-anchor-id="operadores-básicos">Operadores básicos</h2>
+<p>Podemos também usar operadores para fazer contas:</p>
+<p>Como por exemplo:</p>
+<p>soma = 3 + 3 # Adição → 6 sub = 9 - 4 # Subtração → 5 mult = 3 * 3 # Multiplicação → 9 div = 10 / 2 # Divisão → 5.0</p>
+<p>Assi, essas três estruturas são muito importantes em Python, pois permitem organizar e trabalhar com conjuntos de dados de forma simples e eficiente. Cada uma tem suas características específicas, e escolher a que mais se adequa depende do que se deseja fazer no programa.</p>
+</section>
+</section>
+<section id="parte-8-listas-tuplas-e-dicionários" class="level1">
+<h1>Parte 8: Listas, tuplas e dicionários</h1>
+<p>São estruturas que permitem agrupar vários valores em um único conjunto, facilitando a organização e o uso dos dados. Esses agrupadores podem conter diferentes tipos de elementos, tais como: - números - textos - outras listas</p>
+<section id="listas" class="level2">
+<h2 class="anchored" data-anchor-id="listas">Listas</h2>
+<p>Uma lista é uma sequência de valores organizados em ordem, onde cada valor tem uma posição (índice) que começa em zero.</p>
+<p>Ela é mutável, ou seja, podemos mudar os valores depois de criar a lista.</p>
+<p>As listas são criadas usando colchetes [].</p>
+<p>Exemplo:</p>
+<p>lista_val = [6, 7, 8]</p>
+<p>Aqui podemos observar uma lista com três valores. Pode ser acessado ou alterado qualquer valor da lista pelo seu índice.</p>
+<p>Por exemplo:</p>
+<p>print(lista_val[0]) # Mostra 6 lista_val[1] = 10 # Troca o valor 7 por 10</p>
+</section>
+<section id="tuplas" class="level2">
+<h2 class="anchored" data-anchor-id="tuplas">Tuplas:</h2>
+<p>As tuplas são parecidas com as listas, porém, com uma diferença importantíssima: NÃO podem ser alteradas depois de criadas. Isso significa que não é possível adicionar, remover ou modificar elementos dentro de uma tupla.</p>
+<p>Elas são usadas quando queremos garantir que os dados permaneçam sempre os mesmos, oferecendo mais segurança ao código.</p>
+<p>As tuplas são criadas com parênteses ().</p>
+<p>Como por exemplo:</p>
+<p>tupla_val = (4, 5, 6)</p>
+<p>Se tentarmos mudar algum valor, como neste exemplo:</p>
+<p>tupla_val[1] = 7</p>
+<p>O Python vai mostrar um erro, pois tuplas são imutáveis.</p>
+<p>Uma das principais utilidades das tuplas é nas operações de empacotamento (juntar valores) e desempacotamento (separar valores), o que pode facilitar a organização dos dados no código.</p>
+</section>
+<section id="dicionários" class="level2">
+<h2 class="anchored" data-anchor-id="dicionários">Dicionários</h2>
+<p>Semelhante as listas, dicionários são sequências de valores mutáveis, o que diferencia é que nos dicionários pode ser atribuído uma palavra-chave para identicar cada elemento da sequência, facilitando seu acesso posteriormente.</p>
+<p>Um dicionário em Python é uma estrutura que armazena dados em pares de chave e valor. Cada chave é única e está associada a um valor, dessa forma, podemos acessar ou modificar os valores usando suas chaves.</p>
+<p>Os dicionários são criados com chaves {}.</p>
+<p>Tomamos como exemplo:</p>
+<p>dados_pessoa = { “nome”: “Kaline”, “idade”: 35, “cidade”: “Recife” }</p>
+<p>Nesse exemplo, “nome”, “idade” e “cidade” são as chaves, e “Kaline”, 35, “Recife” são os valores associados.</p>
+</section>
+</section>
+<section id="parte-9-estruturas-de-controle" class="level1">
+<h1>Parte 9: Estruturas de controle</h1>
+<p>As estruturas de controle são comandos que permitem tomar decisões (if, elif, else) e repetir ações (for, while).</p>
+<p>Na linguegem Python, podemos usar:</p>
+<ul>
+<li>if → para executar algo se a condição for verdadeira;</li>
+<li>if…else → para escolher entre duas opções;</li>
+<li>if…elif…else → para verificar várias condições diferentes antes de tomar uma decisão.</li>
+</ul>
+<p>Assim, essas estruturas são fundamentais para criar programas que interajam com os dados e executem tarefas de forma dinâmica.</p>
+</section>
+<section id="parte-10-funções" class="level1">
+<h1>Parte 10: Funções</h1>
+<p>São blocos de código reutilizáveis que recebem um nome. Ajudam a organizar o programa e evitam repetição de código.</p>
+<p>Podemos criar uma função uma vez e usá-la quantas vezes quiser.</p>
+<section id="def" class="level2">
+<h2 class="anchored" data-anchor-id="def">Def</h2>
+<p>Em Python, usamos a palavra-chave def para definir uma função, dessa forma def, é uma palavra-chave, que indica o início da definição de uma função.</p>
+<p>Estrutura básica:</p>
+<p>def nome_da_função(parâmetros): # comandos da função</p>
+<p>Como por exemplo de função simples:</p>
+<p>def hello(): print(“Olá Mundo!!!”)</p>
+<p>Para usar a função, basta chamar pelo nome:</p>
+<p>hello()</p>
+<p>Saída:</p>
+<p>Olá Mundo!!!</p>
+</section>
+<section id="parâmetros" class="level2">
+<h2 class="anchored" data-anchor-id="parâmetros">Parâmetros</h2>
+<p>Parâmetros são variáveis que colocamos entre parênteses na definição de uma função. Que quando fazemos o chamamento da função, passamos valores reais para esses parâmetros, assim, esses valores são chamados de argumentos.</p>
+<p>Esses argumentos permitem que a função mude seu comportamento dependendo dos valores recebidos.</p>
+<p>Como por exemplo: Função que mostra o maior entre dois números</p>
+<p>def maior(x, y): if x &gt; y: print(x) else: print(y)</p>
+<p>Chamando a função:</p>
+<p>maior(4, 7)</p>
+<p>Saída:</p>
+<p>7</p>
+<p>Dessa forma, podemos observar que nesse exemplo:</p>
+<ul>
+<li>x e y são os parâmetros</li>
+<li>4 e 7 são os argumentos passados quando a função é chamada</li>
+<li>A função compara os dois valores e imprime o maior</li>
+</ul>
+</section>
+<section id="retorno" class="level2">
+<h2 class="anchored" data-anchor-id="retorno">Retorno</h2>
+<p>O comando return é usado dentro de uma função quando queremos devolver um valor como resultado. Além disso, ele encerra a execução da função naquele ponto.</p>
+<p>Se não utilizarmos o return, a função não vai devolver nenhum valor útil — nesse caso, ela retorna automaticamente o valor especial None, que representa a ausência de resultado.</p>
+<p>Podemos observar como exemplo com return:</p>
+<p>def soma(a, b): return a + b</p>
+<p>Chamando a função:</p>
+<p>resultado = soma(3, 4) print(resultado) # Vai mostrar 7</p>
+<p>Dessa forma, além de criar nossas próprias funções, o Python também oferece várias funções prontas por meio das bibliotecas que para ter acesso a essas funções já construídas, precisamos aprender a importar essas bibliotecas.</p>
+</section>
+</section>
+<section id="parte-11-importação-de-bibliotecas-com-import" class="level1">
+<h1>Parte 11: Importação de bibliotecas com import</h1>
+<p>As bibliotecas são conjuntos de funções prontas que podemos usar a qualquer momento no nosso programa. Elas ajudam a facilitar o código, pois evitam que precise escrever tudo do zero.</p>
+<p>Muitas bibliotecas já vêm instaladas com o Python. Para utilizá-la é preciso importar com o comando import.</p>
+<p>Tomamos como exemplo a biblioteca math (usada para cálculos matemáticos):</p>
+<p>import math print(math.factorial(6)) # Calcula o fatorial de 6</p>
+<p>Podemos importar também apenas uma função específica da biblioteca:</p>
+<p>from math import factorial print(factorial(6)) # Mesmo resultado, sem precisar escrever math.</p>
+<p>Assim, o uso de bibliotecas torna o desenvolvimento em Python muito mais rápido e eficiente, pois permite reutilizar funções confiáveis e testadas. Saber como e quando utilizá-las é essencial para escrever códigos mais limpos, simples e eficazes.</p>
+</section>
+<section id="parte-12-boas-práticas" class="level1">
+<h1>Parte 12: Boas práticas:</h1>
+<p>Para que o código fique organizado e fácil de entendimento, é importante seguir algumas boas práticas de programação. Isso não só facilita o nosso trabalho mais o de quem precisar ler ou utilizar o código no futuro.</p>
+<section id="comentários" class="level2">
+<h2 class="anchored" data-anchor-id="comentários">Comentários</h2>
+<p>Servem para explicar o que o código faz. Eles não são executados pelo Python, mas ajudam a entender melhor cada parte do programa.</p>
+<p>Podemos tomar como exemplo a mensagem de saudação que já utilizamos anteriormente:</p>
+</section>
+</section>
+<section id="esta-função-exibe-uma-mensagem-de-saudação" class="level1">
+<h1>Esta função exibe uma mensagem de saudação</h1>
+<p>def saudacao(): print(“Olá, tudo bem?”)</p>
+<section id="nomes-de-variáveis" class="level2">
+<h2 class="anchored" data-anchor-id="nomes-de-variáveis">Nomes de Variáveis</h2>
+<p>Usar nomes claros e com significado facilita a leitura do código. Evite usar nomes curtos ou sem sentido.</p>
+<p>Por exemplo:</p>
+</section>
+</section>
+<section id="nome-ruim" class="level1">
+<h1>Nome ruim</h1>
+<p>a = 35</p>
+</section>
+<section id="nome-claro" class="level1">
+<h1>Nome claro</h1>
+<p>idade = 35</p>
+<section id="indentação" class="level2">
+<h2 class="anchored" data-anchor-id="indentação">Indentação</h2>
+<p>É o recuo usado para organizar os blocos de código. Na linguagem Python, ela é obrigatória e mostra onde começa e onde termina cada parte do programa.</p>
+<p>Exemplo:</p>
+<p>if idade &gt;= 18: print(“Maior de idade”)</p>
+<p>Diante do exposto, podemos concluir que seguindo essas dicas simples, seu código ficará mais limpo, fácil de entender e mais profissional.</p>
+</section>
+</section>
+<section id="referências" class="level1">
+<h1>Referências</h1>
+<div id="refs" role="list">
+
+</div>
+</section>
+<section id="parte-13-considerações-finais" class="level1">
+<h1>Parte 13 Considerações Finais</h1>
+<p>Ao longo deste trabalho, foi possível compreender a importância das ferramentas Git e GitHub no controle de versões e colaboração em projetos de programação. Também foram explorados conceitos fundamentais de Python, como tipos de dados, estruturas de controle, funções e o uso de bibliotecas externas com o gerenciador de pacotes pip.</p>
+<p>Assim, entender esses conceitos é de extrema importância para quem deseja iniciar na programação ou desenvolver projetos de forma mais organizada e eficiente. Além disso, o uso de boas práticas, como nomeação clara de variáveis, comentários e indentação correta, contribui diretamente para a qualidade e manutenção do código. Dominar essas ferramentas e conceitos representa um passo importante na formação de qualquer programador.</p>
+</section>
+<section id="parte-14-referências" class="level1">
+<h1>Parte 14: Referências</h1>
+<ol type="1">
+<li><p>DOWNEY, Allen B. <em>Pense em Python: pense como um cientista da computação</em>. 2. ed.&nbsp;São Paulo: Novatec, 2016. Tradução de José Augusto N. G. Manzano.</p></li>
+<li><p>CÓDIGO FÁCIL. <em>Versionamento de código com Git e GitHub</em>. 2022. Disponível em: <a href="https://codigofacil.com.br/versionamento-de-codigo-com-git-e-github/">https://codigofacil.com.br/versionamento-de-codigo-com-git-e-github/</a>. Acesso em: 24 jul. 2025.</p></li>
+<li><p>DATA SCIENCE ACADEMY. <em>Top 25 bibliotecas Python para Data Science</em>. 2021. Disponível em: <a href="https://blog.dsacademy.com.br/top-25-bibliotecas-python-para-data_science/">https://blog.dsacademy.com.br/top-25-bibliotecas-python-para-data_science/</a>. Acesso em: 24 jul. 2025.</p></li>
+<li><p>PYTHON ACADEMY. <em>Tipos de variáveis no Python</em>. 2023. Disponível em: <a href="https://pythonacademy.com.br/blog/tipos-de-variaveis-no-python">https://pythonacademy.com.br/blog/tipos-de-variaveis-no-python</a>. Acesso em: 24 jul. 2025.</p></li>
+<li><p>PYTHON SOFTWARE FOUNDATION. <em>PEP 8 – Style Guide for Python Code</em>. 2024. Disponível em: <a href="https://peps.python.org/pep-0008/">https://peps.python.org/pep-0008/</a>. Acesso em: 24 jul. 2025.</p></li>
+</ol>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
