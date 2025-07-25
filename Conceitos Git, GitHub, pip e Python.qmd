@@ -10,6 +10,8 @@ format:
     margin-contained: true
 execute:
   echo: true
+bibliography: referencias.bib
+csl: apa.csl  # você pode trocar por abnt.csl, se quiser o estilo ABNT
 ---
 
 # -------------------------
@@ -66,12 +68,12 @@ git clone        -> Copia um repositório do GitHub para sua máquina
 
 ## O que é um commit?
 
-Um "snapshot" (foto) do estado do seu código com uma mensagem explicativa.
+Um "snapshot" do estado do seu código com uma mensagem explicativa.
 Realizar um commit no Git registra alterações feitas em um ou mais arquivos. Cada commit recebe um identificador único, chamado de SHA ou hash.
 
 # Parte 5: O que é pip?
 
-O pipi geralmente já vem instalado junto com o Python, mas em algumas instalações pode ser necessário ativá-lo ou instalá-lo separadamente. Ele gerencia bibliotecas que irá instalar, desinstalar e atualizar dentro do computador.
+O pip geralmente já vem instalado junto com o Python, mas em algumas instalações pode ser necessário ativá-lo ou instalá-lo separadamente. Ele gerencia bibliotecas que irá instalar, desinstalar e atualizar dentro do computador.
 
 ## Como instalar o pip install
 Sua instalação é feita pelo terminal, utilizando o comando:
@@ -287,7 +289,7 @@ Olá Mundo!!!
 
 ## Parâmetros
 
-Parâmetros são variáveis que colocamos entre parênteses na definição de uma função. Que quando fazemos o chammamento da função, passamos valores reais para esses parâmetros, assim, esses valores são chamados de argumentos.
+Parâmetros são variáveis que colocamos entre parênteses na definição de uma função. Que quando fazemos o chamamento da função, passamos valores reais para esses parâmetros, assim, esses valores são chamados de argumentos.
 
 Esses argumentos permitem que a função mude seu comportamento dependendo dos valores recebidos.
 
@@ -387,6 +389,11 @@ if idade >= 18:
 
 Diante do exposto, podemos concluir que seguindo essas dicas simples, seu código ficará mais limpo, fácil de entender e mais profissional.
 
+# Referências
+
+::: {#refs}
+:::
+
 # Parte 13 Considerações Finais
 
 Ao longo deste trabalho, foi possível compreender a importância das ferramentas Git e GitHub no controle de versões e colaboração em projetos de programação. Também foram explorados conceitos fundamentais de Python, como tipos de dados, estruturas de controle, funções e o uso de bibliotecas externas com o gerenciador de pacotes pip.
@@ -395,4 +402,13 @@ Assim, entender esses conceitos é de extrema importância para quem deseja inic
 
 # Parte 14: Referências
 
+1. DOWNEY, Allen B. *Pense em Python: pense como um cientista da computação*. 2. ed. São Paulo: Novatec, 2016. Tradução de José Augusto N. G. Manzano.
+
+2. CÓDIGO FÁCIL. *Versionamento de código com Git e GitHub*. 2022. Disponível em: [https://codigofacil.com.br/versionamento-de-codigo-com-git-e-github/](https://codigofacil.com.br/versionamento-de-codigo-com-git-e-github/). Acesso em: 24 jul. 2025.
+
+3. DATA SCIENCE ACADEMY. *Top 25 bibliotecas Python para Data Science*. 2021. Disponível em: [https://blog.dsacademy.com.br/top-25-bibliotecas-python-para-data_science/](https://blog.dsacademy.com.br/top-25-bibliotecas-python-para-data_science/). Acesso em: 24 jul. 2025.
+
+4. PYTHON ACADEMY. *Tipos de variáveis no Python*. 2023. Disponível em: [https://pythonacademy.com.br/blog/tipos-de-variaveis-no-python](https://pythonacademy.com.br/blog/tipos-de-variaveis-no-python). Acesso em: 24 jul. 2025.
+
+5. PYTHON SOFTWARE FOUNDATION. *PEP 8 – Style Guide for Python Code*. 2024. Disponível em: [https://peps.python.org/pep-0008/](https://peps.python.org/pep-0008/). Acesso em: 24 jul. 2025.
 
